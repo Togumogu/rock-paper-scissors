@@ -1,36 +1,58 @@
-let playerScore 
-let computerScore 
-let winner = ""
+//Score System
 
-function round(playerSelection,computerSelection) {
+let playerScore = 0
+let computerScore = 0
+
+//Computer Randomized Choice
+
+function getComputerChoice() {
+    let randomSelection = Math.floor(Math.random() * 3)
+    if (randomSelection === 0) {
+        return "Rock"
+    } else if (randomSelection === 1) {
+        return "Scissors"
+    } else if (randomSelection === 2) {
+        return "Paper"
+    }
+}
+
+//A Single Round of Rock-Paper-Scissors
+
+function singleRound(playerSelection,computerSelection) {
     if (playerSelection === computerSelection) {
         console.log("Tie!")
     } else if (
         (playerSelection === "rock" && computerSelection === "scissors") ||
         (playerSelection === "paper" && computerSelection === "rock") ||
         (playerSelection === "scissors" && computerSelection === "paper")) {
+            playerScore +=
             console.log(`You Win! ${playerSelection} beats ${computerSelection}!`)
         } else if (
-        (playerSelection === "rock" && computerSelection === "scissors") ||
-        (playerSelection === "paper" && computerSelection === "rock") ||
-        (playerSelection === "scissors" && computerSelection === "paper")) {
+        (playerSelection === "scissors" && computerSelection === "rock") ||
+        (playerSelection === "rock" && computerSelection === "paper") ||
+        (playerSelection === "paper" && computerSelection === "scissors")) {
+            computerScore +=
             console.log(`You Lose! ${computerSelection} beats ${playerSelection}!`)
         } else {
             console.log("Enter either rock, paper or scissors!")
         }
-
-
     }
 
-function getComputerChoice() {
-    getComputerChoice = Math.floor(Math.random() * 3)
-    if (getComputerChoice === 0) {
-        return computerSelection = "Scissors" 
-    } else if (getComputerChoice === 1) {
-        return computerSelection = "Rock"
-    } else if (getComputerChoice === 2) {
-        return computerSelection = "Paper"
-    }
 
+//Player & ComputerSelection
+
+let playerSelection = prompt("Rock, paper, scissors?")
+playerSelection = playerSelection.toLowerCase()
+
+const computerSelection = getComputerChoice()
+console.log(playRound(playerSelection, computerSelection)
+
+//Endgame
+
+function endgame() {
+    if (playerScore === 5) {
+        console.log("Game is over! You Win")
+    } else if (computerScore === 5) {
+        console.log("Game is over! You Lose")
+    }
 }
-
