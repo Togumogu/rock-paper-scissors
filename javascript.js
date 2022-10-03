@@ -6,15 +6,21 @@ let computerScore = 0
 //Computer Randomized Choice
 
 function getComputerChoice() {
+    let computerSelection = ""
     let randomSelection = Math.floor(Math.random() * 3)
     if (randomSelection === 0) {
-        return "Rock"
+        computerSelection = "Rock"
     } else if (randomSelection === 1) {
-        return "Scissors"
+        computerSelection = "Scissors"
     } else if (randomSelection === 2) {
-        return "Paper"
+        computerSelection = "Paper"
     }
+    return computerSelection
 }
+
+//Player Choice
+
+function pl
 
 //A Single Round of Rock-Paper-Scissors
 
@@ -38,14 +44,16 @@ function singleRound(playerSelection,computerSelection) {
         }
     }
 
+//Game of 5 Rounds
 
-//Player & ComputerSelection
+function rockPaperScissors(
+    singleRound()
+    singleRound()
+    singleRound()
+    singleRound()
+    singleRound()
+)
 
-let playerSelection = prompt("Rock, paper, scissors?")
-playerSelection = playerSelection.toLowerCase()
-
-const computerSelection = getComputerChoice()
-console.log(playRound(playerSelection, computerSelection)
 
 //Endgame
 
