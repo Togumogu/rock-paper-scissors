@@ -6,25 +6,25 @@ let computerScore = 0
 //Computer Randomized Choice
 
 function getComputerChoice() {
-    let computerSelection = ""
+    let computerChoice = ""
     let randomSelection = Math.floor(Math.random() * 3)
     if (randomSelection === 0) {
-        computerSelection = "rock"
+        computerChoice = "rock"
     } else if (randomSelection === 1) {
-        computerSelection = "scissors"
+        computerChoice = "scissors"
     } else if (randomSelection === 2) {
-        computerSelection = "paper"
+        computerChoice = "paper"
     }
-    return computerSelection
+    return computerChoice
 }
 
 //Player Choice
 
 function getPlayerChoice() {
-    let playerSelection = prompt("Rock, paper or scissors?")
-    playerSelection = playerSelection.toLowerCase()
-    if (playerSelection === "rock" || playerSelection === "paper" || playerSelection === "scissors") {
-        return playerSelection
+    let playerChoice = prompt("Rock, paper or scissors?", "")
+    playerChoice = playerChoice.toLowerCase()
+    if (playerChoice === "rock" || playerChoice === "paper" || playerChoice === "scissors") {
+        return playerChoice
     } else {
         return "Please enter either rock, paper or scissors!"
     }
@@ -32,52 +32,35 @@ function getPlayerChoice() {
 
 //A Single Round of Rock-Paper-Scissors
 
-function singleRound(playerSelection,computerSelection) {
-    
-
+function singleRound(playerChoice,computerChoice) {
    
-    if (playerSelection === computerSelection) {
+
+    if (playerChoice === computerChoice) {
         return "Tie"
     } else if (
-        (playerSelection === "rock" && computerSelection === "scissors") ||
-        (playerSelection === "paper" && computerSelection === "rock") ||
-        (playerSelection === "scissors" && computerSelection === "paper")
+        (playerChoice === "rock" && computerChoice === "scissors") ||
+        (playerChoice === "paper" && computerChoice === "rock") ||
+        (playerChoice === "scissors" && computerChoice === "paper")
         ) {
-            return `You Win! ${playerSelection} beats ${computerSelection}!`
+            return `You Win! ${playerChoice} beats ${computerChoice}!`
             playerScore++
         } else if (
-        (playerSelection === "scissors" && computerSelection === "rock") ||
-        (playerSelection === "rock" && computerSelection === "paper") ||
-        (playerSelection === "paper" && computerSelection === "scissors")
+        (playerChoice === "scissors" && computerChoice === "rock") ||
+        (playerChoice === "rock" && computerChoice === "paper") ||
+        (playerChoice === "paper" && computerChoice === "scissors")
         ) {
-            return `You Lose! ${computerSelection} beats ${playerSelection}!`
+            return `You Lose! ${computerChoice} beats ${playerChoice}!`
             computerScore++
         } else {
             return "Something went wrong!"
         }
-    
-    checkScore()
 
-}
-    
-//Score Check
+//Game of Rock Paper Scissors
 
-function checkScore() {
-    if ((playerScore < 5) && (computerScore < 5)) {
+function rockPaperScissors() {
+    for (let i = 1, i < 6, i++) {
+        playerSelection = getPlayerChoice()
+        computerSelection = getComputerChoice()
         singleRound()
-    } else {
-        endgame()
     }
 }
-
-//Endgame
-
-function endgame() {
-    if (playerScore === 5) {
-        return "Game is over! You Win"
-    } else if (computerScore === 5) {
-        return "Game is over! You Lose"
-    }
-    playerScore = 0
-    computerScore = 0
-}   
