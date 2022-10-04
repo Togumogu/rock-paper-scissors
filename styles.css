@@ -1,0 +1,48 @@
+body {
+    background-color: aquamarine;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.gamebox {
+    background-color: grey;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-direction: column;
+    border: 5px solid lightgray;
+    width: 800px;
+    height: 600px;
+    margin: auto;
+    margin-top: 10%;
+    border-radius: 25px
+}
+
+.header {
+    font-size: 24px;
+    font-weight: 700;
+}
+
+.buttons {
+    display: flex;
+    justify-content: space-between;
+    gap: 24px;
+}
+
+.single-button {
+    padding: 16px;
+    border-radius: 8px;
+    background-color: brown;
+    border: 5px solid black;
+    font-size: 16px;
+    font-weight: 700;
+}
+
+.scoreboards {
+    display: flex;
+    gap: 16px;
+    border: 2px solid white;
+    border-radius: 8px;
+    padding: 16px;
+}
