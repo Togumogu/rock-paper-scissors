@@ -1,3 +1,4 @@
+
 //Score System
 
 let playerScore = 0
@@ -65,6 +66,7 @@ function singleRound(playerChoice, computerChoice) {
         }
         
 }
+
 //Game of Rock Paper Scissors
 
 function rockPaperScissors() {

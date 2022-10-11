@@ -18,13 +18,15 @@
             <button class="single-button" id="paper">Paper</button>
             <button class="single-button" id="scissors">Scissors</button>
         </div>
-        <div class="move">Computer played rock! You lose!</div>
+        <div id="computer-move">Computer played rock! You lose!</div>
         <div class="scoreboards">
             <div class="score-text">Player</div>
-            <div class="score">0:0</div>
+            <div class="score" id="score">
+                <div id="player-score">0</div>:<div id="computer-score">0</div>
+            </div>
             <div class="score-text">Computer</div>
         </div>
-        <button class="single-button">Reset</button>
+        <button class="single-button" id="reset">Reset</button>
     </div>
 </body>
 </html>
